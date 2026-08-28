@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA 1 – Estadísticas</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            font-family: "MS Sans Serif", Geneva, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+            max-width: 900px;
+            width: 90%;
+            margin: 20px auto;
+            align-self: center;
+        }
+
+        header, page-footer {
+            background-color: #010320 !important;
+        }
+
+        footer.page-footer {
+            background-color: #010320;
+            border-top: 4px solid #0056b3;
+            padding-top: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-family: Arial, sans-serif;
+            margin: 10px 0;
+        }
+
+        nav {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="center-align section">
+        <h1>Lo quieres, te lo vendo</h1>
+        <nav class="center-align">
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="index.html#productos" class="waves-effect waves-light btn-flat white-text">Productos</a></li>
+                    <li><a href="estadisticas.html" class="waves-effect waves-light btn-flat white-text">Estadísticas</a></li>
+                    <li><a href="index.html#contacto" class="waves-effect waves-light btn-flat white-text">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="card-panel z-depth-1">
+        <h5 class="grey-text text-darken-4 center-align">Reporte de Ventas por Producto</h5>
+
+        <table id="tablaEstadisticas" class="striped highlight responsive-table w-100">
+            <thead>
+                <tr>
+                    <th>ID Producto</th>
+                    <th>Nombre del Producto</th>
+                    <th>Categoría</th>
+                    <th>Unidades Vendidas</th>
+                    <th>Ingresos Totales ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>PROD-001</td><td>Audífonos Bluetooth</td><td>Electrónica</td><td>145</td><td>$4,350.00</td></tr>
+                <tr><td>PROD-002</td><td>Teclado Mecánico</td><td>Periféricos</td><td>89</td><td>$6,230.00</td></tr>
+                <tr><td>PROD-003</td><td>Mouse Gamer</td><td>Periféricos</td><td>210</td><td>$8,400.00</td></tr>
+                <tr><td>PROD-004</td><td>Monitor 4K 27"</td><td>Pantallas</td><td>34</td><td>$11,900.00</td></tr>
+                <tr><td>PROD-005</td><td>Silla Ergonómica</td><td>Mobiliario</td><td>52</td><td>$9,360.00</td></tr>
+                <tr><td>PROD-006</td><td>Lámpara LED Escritorio</td><td>Hogar</td><td>120</td><td>$2,400.00</td></tr>
+                <tr><td>PROD-007</td><td>Disco Duro Externo 2TB</td><td>Almacenamiento</td><td>95</td><td>$7,600.00</td></tr>
+                <tr><td>PROD-008</td><td>Cámara Web Full HD</td><td>Vídeo</td><td>178</td><td>$8,900.00</td></tr>
+                <tr><td>PROD-009</td><td>Micrófono USB Condensador</td><td>Audio</td><td>64</td><td>$4,480.00</td></tr>
+                <tr><td>PROD-010</td><td>Mochila para Laptop</td><td>Accesorios</td><td>130</td><td>$3,900.00</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="page-footer center-align">
+        <div class="container">
+            <p>Equipo de trabajo: Guillermo Manríquez - Daniel Parada - Vicente Guzmán</p>
+            <p>©2026</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
+    <script src="funciones.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#tablaEstadisticas').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/2.0.2/i18n/es-ES.json'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
